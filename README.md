@@ -32,13 +32,11 @@ curl -O https://raw.githubusercontent.com/Adgerlee/tcp-optimize.sh/main/tcp-opti
 或
 
 bash
-深色版本
 wget https://raw.githubusercontent.com/Adgerlee/tcp-optimize.sh/main/tcp-optimize.sh
 2. 添加执行权限
 确保脚本具有可执行权限：
 
 bash
-深色版本
 chmod +x tcp-optimize.sh
 3. 运行脚本
 根据你的需求选择合适的运行模式：
@@ -47,19 +45,16 @@ chmod +x tcp-optimize.sh
 适用于中国与海外之间的服务器通信：
 
 bash
-深色版本
 sudo ./tcp-optimize.sh --target=global
 🤖 自动优化
 脚本会自动检测网络环境并应用最优参数：
 
 bash
-深色版本
 sudo ./tcp-optimize.sh --target=auto
 🏠 本地优化
 适用于低延迟、高带宽的本地或同区域网络：
 
 bash
-深色版本
 sudo ./tcp-optimize.sh --target=local
 🔧 支持的优化项
 脚本会自动调整以下 Linux 内核参数：
@@ -75,7 +70,6 @@ Q: 我需要备份现有的配置吗？
 A: 是的，建议在运行脚本前备份 /etc/sysctl.conf 文件，以便恢复默认设置。
 
 bash
-深色版本
 cp /etc/sysctl.conf /etc/sysctl.conf.bak
 Q: 如何撤销这些优化？
 
