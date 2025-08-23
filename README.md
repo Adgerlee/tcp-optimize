@@ -2,7 +2,6 @@
 
 > 一个简单高效的跨境网络 TCP 自动化调优脚本，旨在提升高延迟、高丢包场景下的网络性能。
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)  
 ⭐ 如果你觉得有用，请点个 Star 支持我！
 
 ---
