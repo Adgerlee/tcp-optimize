@@ -1,8 +1,7 @@
 # 🎯 tcp-optimize
 
 > 一个简单高效的跨境网络TCP自动化调优
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)  
+![TCP优化示意图]([https://example.com/tcp-optimize-diagram.png](https://gateway.pinata.cloud/ipfs/QmSNtyPho8JXxvieLR41EbVzm7FfWk4eLJasGh5NtN3V93) "TCP 参数优化对比")
 ⭐ 如果你觉得有用，欢迎点个 Star 支持我！
 
 ## 🚀 使用方法
