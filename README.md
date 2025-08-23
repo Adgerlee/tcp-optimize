@@ -40,6 +40,20 @@ chmod +x tcp-optimize.sh
 3. 运行脚本
 根据你的需求选择合适的运行模式：
 
+
+新增功能（定向调优）
+# 使用默认服务器进行 global 模式优化
+sudo ./tcp-optimize.sh --target=global
+
+# 使用自定义服务器 (例如，你的家庭网络中的另一台机器)
+sudo ./tcp-optimize.sh --custom-server=192.168.1.100:5201
+
+# 使用自定义服务器 (公网域名)
+sudo ./tcp-optimize.sh --custom-server=your-iperf3-server.example.com:5201
+
+# 结合自定义服务器和特定模式 (模式对自定义服务器的影响较小，但仍会影响 MULTIPLIER)
+sudo ./tcp-optimize.sh --custom-server=192.168.1.100:5201 --target=local
+
 🌍 跨境优化（推荐）
 适用于中国与海外之间的服务器通信：
 
