@@ -77,14 +77,18 @@ fi
 
 # === 🌍 公共 iPerf3 服务器（按区域分组）===
 declare -a SERVERS_LOCAL=(
-    "中国-香港 speedtest.hkg12.hk.leaseweb.net:5203"
+    "印度-孟买 BOM.proof.ovh.net -p 5203"
     "新加坡    speedtest.singnet.com.sg:5203"
+    "新加坡    SGP.proof.ovh.net -p 5206"
 )
 
 declare -a SERVERS_GLOBAL=(
-    "美国-洛杉矶 speedtest.lax12.us.leaseweb.net:5003"
-    "德国-诺德斯特兰 speedtest.wtnet.de:5303"
+    "澳洲-悉尼 SYD.proof.ovh.net -p 5209"
+    "法国-斯特拉斯堡 SBG.proof.ovh.net -p 5206"
     "法国-巴黎 ping.online.net:5203"
+    "法国-鲁贝 RBX.proof.ovh.net -p 5206"
+    "法国-格拉沃利讷 GRA.proof.ovh.net -p 5206"
+    "美国-宾州 ERI.proof.ovh.net -p 5206"
 )
 
 # 合并用于测速
