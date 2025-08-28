@@ -78,8 +78,8 @@ fi
 # === 🌍 公共 iPerf3 服务器（按区域分组）===
 declare -a SERVERS_LOCAL=(
     "印度-孟买 BOM.proof.ovh.net:5203"
-    "新加坡    speedtest.singnet.com.sg:5203"
-    "新加坡    SGP.proof.ovh.net:5206"
+    "新加坡 speedtest.singnet.com.sg:5203"
+    "新加坡 SGP.proof.ovh.net:5206"
 )
 
 declare -a SERVERS_GLOBAL=(
