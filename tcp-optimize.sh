@@ -95,42 +95,6 @@ declare -a SERVERS_GLOBAL=(
 SERVERS_ALL=("${SERVERS_LOCAL[@]}" "${SERVERS_GLOBAL[@]}")
 
 # === 🌐 探测延迟，区分用途 ===
-echo -e "${BLUE}🌐 正在探测节点延迟...${NC}"
-BEST_LOCAL_IP="" BEST_GLOBAL_IP=""
-MIN_LOCAL_PING=9999 MIN_GLOBAL_PING=9999
-BEST_NAME=""
-
-for server in "${SERVERS_ALL[@]}"; do
-    full_name=$(echo "$server" | awk '{print $1}')
-    domain_port=$(echo "$server" | awk '{print $2}')
-    location=$(echo "$full_name" | sed 's/[^-]*-//')
-    domain=$(echo "$domain_port" | cut -d: -f1)
-    port=$(echo "$domain_port" | cut -d: -f2)
-
-    ip=$(ping -c1 -W2 "$domain" | grep -oE "\([0-9.]+\)" | tr -d "()" | head -1)
-    [ -z "$ip" ] && continue
-
-    ping_ms=$(ping -c3 -W2 "$ip" | grep 'avg' | awk -F'/' '{print $5}' 2>/dev/null)
-    [ -z "$ping_ms" ] && continue
-
-    ping_ms=$(printf "%.0f" "$ping_ms")
-    echo -e "   $location $ip:$port → ${GREEN}${ping_ms}ms${NC}"
-
-    # 分别记录本地和跨境延迟
-    if [[ " ${SERVERS_LOCAL[*]} " =~ " $server " ]]; then
-        if (( $(echo "$ping_ms < $MIN_LOCAL_PING" | bc -l 2>/dev/null || echo 0) )); then
-            MIN_LOCAL_PING=$ping_ms
-            BEST_LOCAL_IP=$ip
-        fi
-    else
-        if (( $(echo "$ping_ms < $MIN_GLOBAL_PING" | bc -l 2>/dev/null || echo 0) )); then
-            MIN_GLOBAL_PING=$ping_ms
-            BEST_GLOBAL_IP=$ip
-            BEST_NAME="$location ($domain:$port)"
-        fi
-    fi
-done
-
 # 确定测速节点（本地最优，减少测速干扰）
 TEST_SERVER=${BEST_LOCAL_IP:-$BEST_GLOBAL_IP}
 TEST_PORT=5203
